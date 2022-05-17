@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-climate-energy-policy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "@eeacms/volto-climate-energy-policy: Volto policy add-on for Climate Energy ",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
@@ -41,4 +41,3 @@
     "cypress:open": "if [ -d ./project ]; then NODE_ENV=development ./project/node_modules/cypress/bin/cypress open; else NODE_ENV=development ../../../node_modules/cypress/bin/cypress open; fi"
   }
 }
-
