@@ -1,6 +1,6 @@
 {
   "name": "@eeacms/volto-climate-energy-policy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "@eeacms/volto-climate-energy-policy: Volto policy add-on for Climate Energy ",
   "main": "src/index.js",
   "author": "European Environment Agency: IDM2 A-Team",
