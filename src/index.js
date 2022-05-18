@@ -1,3 +1,5 @@
+import { runtimeConfig } from '@plone/volto/runtime_config';
+
 const applyConfig = (config) => {
   const allowed_cors_destinations = [
     ...(config.settings.allowed_cors_destinations || []),
@@ -25,6 +27,27 @@ const applyConfig = (config) => {
     tableauVersion: '2.3.0',
     pdfWorkerSrc: '//www.eea.europa.eu/pdfjs/pdf.worker.min.js',
   };
+
+  // #137187 Keycloak integration
+  if (runtimeConfig['RAZZLE_KEYCLOAK'] === 'Yes') {
+    config.settings.externalRoutes = [
+      ...(config.settings.externalRoutes || []),
+      {
+        match: {
+          path: '/login',
+          exact: true,
+          strict: false,
+        },
+      },
+      {
+        match: {
+          path: '/logout',
+          exact: true,
+          strict: false,
+        },
+      },
+    ];
+  }
 
   return config;
 };
