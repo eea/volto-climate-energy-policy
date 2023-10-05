@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { slateBeforeEach, slateAfterEach } from '../support/e2e';
 
 describe('Blocks Tests', () => {
