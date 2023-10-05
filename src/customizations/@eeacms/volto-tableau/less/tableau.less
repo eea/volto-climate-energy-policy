@@ -1,0 +1,208 @@
+// eslint-disable-next-line import/no-unresolved
+@import '@eeacms/volto-tableau/less/globals.less';
+
+@addon: 'volto-tableau';
+@addontype: 'tableauBlock';
+@addonelement: 'tableau';
+
+.loadAddonVariables();
+
+@keyframes spin {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.tableau-wrapper {
+  padding: @tableauWrapperPadding;
+  margin: @tableauWrapperMargin;
+  background-color: @tableauWrapperBackground;
+
+  .tableau-debug {
+    margin: 0 auto 1rem auto;
+
+    .tableau-version .version {
+      color: @secondaryColor;
+    }
+  }
+
+  .tableau {
+    margin-bottom: 1rem;
+
+    &:not(.tableau-autoscale) {
+      overflow: auto;
+    }
+
+    &.tableau-autoscale {
+      overflow: hidden;
+    }
+
+    iframe {
+      padding: @tableauIframePadding;
+      border: @tableauIframeBorder;
+      margin: @tableauIframeMargin;
+      border-radius: @tableauIframeBorderRadius;
+      transform-origin: top left;
+    }
+  }
+
+  .tableau-loader {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    animation: spin 1s linear infinite;
+    background-image: linear-gradient(
+      -45deg,
+      @primaryColor 25%,
+      @secondaryColor 25%,
+      @secondaryColor 50%,
+      @primaryColor 50%,
+      @primaryColor 75%,
+      @secondaryColor 75%
+    );
+    background-size: 100px 100px;
+    border-radius: 5px;
+
+    span {
+      margin: 6px auto;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .tableau-error {
+    color: @errorTextColor;
+  }
+
+  .reload-tableau {
+    position: absolute;
+    right: 1rem;
+  }
+
+  .json-snippet {
+    .key {
+      color: @secondaryColor;
+    }
+  }
+
+  .important-note {
+    color: @secondaryColor;
+
+    .clear-filter-button {
+      padding: 0;
+      border: none;
+      margin: 0;
+      background-color: transparent;
+      color: inherit;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        color: @primaryColor;
+      }
+    }
+  }
+}
+
+// ========= Sources ==========
+
+.tableau-wrapper .tableau-info {
+  display: none;
+}
+
+.embed-sources-header {
+  cursor: pointer;
+}
+
+.tableau-download-button,
+.tableau-share-button,
+.tableau-sources-button {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 3px;
+  border: none;
+  background-color: transparent;
+  color: @textColor;
+  cursor: pointer;
+  font-weight: bold;
+
+  .icon {
+    margin-left: 0.5rem;
+  }
+
+  &:hover {
+    color: @secondaryColor;
+  }
+
+  &.expanded {
+    padding-bottom: 0;
+    border-bottom: 3px solid @secondaryColor;
+    color: @secondaryColor;
+  }
+}
+
+#tableau-sources-popup,
+#tableau-download-popup {
+  .ui.popup {
+    min-width: 600px;
+    background-color: #f9f9f9;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    &::before {
+      background-color: #f9f9f9;
+    }
+
+    .sources-list > li,
+    .sources-list > li > * {
+      color: @textColor;
+    }
+
+    a:hover {
+      color: @secondaryColor;
+    }
+  }
+
+  .sources-list {
+    margin: 0;
+    list-style: decimal inside;
+    padding-inline-start: 0;
+  }
+
+  @media screen and (max-width: @largestMobileScreen) {
+    .ui.popup {
+      min-width: 300px;
+    }
+  }
+}
+
+#tableau-download-popup {
+  .ui.popup {
+    min-width: 460px;
+    text-align: center;
+  }
+}
+
+@media print {
+  .tableau-download-container,
+  .tableau-sources-container,
+  .tableau-share-container,
+  #tableau-sources-popup {
+    display: none;
+  }
+}
+
+#tableau-editor-modal {
+  width: 90vw !important;
+  height: calc(80vh - 10em) !important;
+}
+
+.loadAddonVariables();
