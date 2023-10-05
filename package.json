@@ -17,7 +17,8 @@
     "url": "git@github.com:eea/volto-climate-energy-policy.git"
   },
   "dependencies": {
-    "@plone/scripts": "*"
+    "@plone/scripts": "*",
+    "razzle-plugin-scss": "4.2.18"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.0",
