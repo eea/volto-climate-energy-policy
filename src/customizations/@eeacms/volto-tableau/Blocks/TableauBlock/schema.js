@@ -1,5 +1,5 @@
-// eslint-disable import/no-anonymous-default-export
-// eslint-disable-next-line import/no-unresolved
+/* eslint-disable import/no-anonymous-default-export, import/no-unresolved */
+
 import {
   getSheetnamesChoices,
   canChangeVizData,
