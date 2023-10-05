@@ -1,0 +1,8 @@
+@tableauWrapperBackground : #ffffff;
+@tableauWrapperPadding    : 1rem;
+@tableauWrapperMargin     : 0 0 1rem 0;
+
+@tableauIframePadding       : 0;
+@tableauIframeMargin        : 0 auto 1rem auto;
+@tableauIframeBorder        : none;
+@tableauIframeBorderRadius  : 0;
